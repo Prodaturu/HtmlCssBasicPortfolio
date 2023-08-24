@@ -1,0 +1,224 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', SegoeUI, 'Times New Roman', Times, serif;
+    background-image: url(images/prodaturu.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left top;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+
+}
+
+/* Navigation bar Styles */
+nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    height: 15%;
+    max-height: 40px;
+    width: 100%;
+    padding-left: 20px;
+    transition: background-color 0.5s ease; /* For smooth transition back to normal state*/
+}
+
+nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent; /* Initially transparent */
+    pointer-events: none; /* Ensures hover effects on child elements still work */
+    transition: background-color 0.5s ease; /* For smooth transition*/
+}
+
+
+nav:hover::before {
+    background-color: rgba(187, 185, 185, 0.25); /* Transparent ash colour on hover */
+}
+
+/* List Styles */
+ul {
+    display: flex;
+    padding: 2px;
+    list-style: none;
+}
+
+nav li {
+    padding: 4px 12px;
+    list-style: none;
+}
+
+nav li a.inner-link {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+nav li a:hover{
+    text-decoration: none;
+}
+
+
+/* Container Styles */
+.container {
+    display: flex;
+    max-width: 100%;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.inner-link::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(10, 10, 10);
+    transition: width 0.5s;
+}
+
+.inner-link:hover::after {
+    width: 50%;
+}
+
+.logo {
+    max-height: 30px;
+    cursor: pointer;
+}
+
+.right-of-navbar {
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon {
+    aspect-ratio: 2/1;
+    width: 60px;
+    cursor: pointer;
+}
+
+.text-box{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 8%;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.text-box p {
+    font-size: 35px;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.text-box h1{
+    font-size: 70px;
+    line-height: 50px;
+    margin-left: -5px;
+    padding-bottom: 15px;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    background: url(images/back.png);
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 60s linear infinite;
+}
+
+@keyframes back{
+    100%{
+        background-position: 1800px 0;
+    }
+}
+
+.text-box h3{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/*+ Adjusted Font Sizes and Line Heights for smaller screens */
+
+@media screen and (max-width: 780px) {
+    * {
+        background-image: url(images/smallerPic.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position:top center ;
+    }
+
+    .text-box p {
+        font-size: 30px;
+        font-weight: 600;
+        padding-bottom: 8px;
+    }
+    
+    .text-box h1{
+        font-size: 60px;
+        line-height: 30px;
+        margin-left: -5px;
+        padding-bottom: 20px;
+    }
+    
+    .text-box h3{
+        font-size: 22px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    /* !!! Check if overflow is working on different screens*/
+    .text-box {
+        overflow: auto; 
+    }
+}
+
+@media screen and (max-width: 520px) {
+    * {
+        background-image: url(images/smallerPic.jpg); !important
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: right top ;
+    }
+
+    /* Adjust Font Sizes and Line Heights */
+    .text-box p {
+        font-size: 25px;
+        font-weight: 600;
+        padding-bottom: 6px;
+    }
+    
+    .text-box h1{
+        font-size: 45px;
+        line-height: 30px;
+        margin-left: -5px;
+        padding-bottom: 10px;
+    }
+    
+    .text-box h3{
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    /* !!! */
+    .text-box {
+        overflow: auto;
+    }
+}
+
