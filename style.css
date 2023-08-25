@@ -4,17 +4,16 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'poppins', SegoeUI, 'Times New Roman', Times, serif;
-    background-image: url(images/prodaturu.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: left top;
 }
 
 html, body {
     width: 100%;
     height: 100%;
-
+    background-image: url(images/prodaturu.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left top;
 }
 
 /* Navigation bar Styles */
@@ -23,8 +22,8 @@ nav {
     align-items: center;
     position: relative;
     justify-content: space-between;
-    height: 15%;
-    max-height: 40px;
+    height: 3rem;
+    /* max-height: 40px; */
     width: 100%;
     padding-left: 20px;
     transition: background-color 0.5s ease; /* For smooth transition back to normal state*/
@@ -57,6 +56,7 @@ ul {
 nav li {
     padding: 4px 12px;
     list-style: none;
+    position: relative;
 }
 
 nav li a.inner-link {
@@ -70,6 +70,27 @@ nav li a:hover{
     text-decoration: none;
 }
 
+.tooltip {
+    
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000000;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 100;
+    top: 30px; /* Adjust this value as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+li:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
 
 /* Container Styles */
 .container {
@@ -120,16 +141,18 @@ nav li a:hover{
 }
 
 .text-box p {
-    font-size: 35px;
-    font-weight: 600;
+    font-size: 2rem; /* 35px */
+    padding-bottom: 0.625rem; /* 10px */
     padding-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .text-box h1{
-    font-size: 70px;
-    line-height: 50px;
+    font-size: 4rem; 
+    line-height: 3rem; 
+    padding-bottom: 0.75rem; 
     margin-left: -5px;
-    padding-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
     color: transparent;
     -webkit-text-stroke: 1px white;
     background: url(images/back.png);
@@ -141,7 +164,7 @@ nav li a:hover{
 
 @keyframes back{
     100%{
-        background-position: 1800px 0;
+        background-position: 625px 0;
     }
 }
 
@@ -149,12 +172,13 @@ nav li a:hover{
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Horizontal, Vertical, Blur, Color */
 }
 
 /*+ Adjusted Font Sizes and Line Heights for smaller screens */
 
 @media screen and (max-width: 780px) {
-    * {
+    html, body {
         background-image: url(images/smallerPic.jpg);
         background-size: cover;
         background-repeat: no-repeat;
@@ -162,24 +186,9 @@ nav li a:hover{
         background-position:top center ;
     }
 
-    .text-box p {
-        font-size: 30px;
-        font-weight: 600;
-        padding-bottom: 8px;
-    }
-    
-    .text-box h1{
-        font-size: 60px;
-        line-height: 30px;
-        margin-left: -5px;
-        padding-bottom: 20px;
-    }
-    
-    .text-box h3{
-        font-size: 22px;
-        font-weight: 500;
-        margin-bottom: 20px;
-    }
+html{
+    font-size: 14px;
+}
 
     /* !!! Check if overflow is working on different screens*/
     .text-box {
@@ -188,32 +197,16 @@ nav li a:hover{
 }
 
 @media screen and (max-width: 520px) {
-    * {
-        background-image: url(images/smallerPic.jpg); !important
+    html, body {
+        background-image: url(images/smallerPic.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: right top ;
     }
 
-    /* Adjust Font Sizes and Line Heights */
-    .text-box p {
-        font-size: 25px;
-        font-weight: 600;
-        padding-bottom: 6px;
-    }
-    
-    .text-box h1{
-        font-size: 45px;
-        line-height: 30px;
-        margin-left: -5px;
-        padding-bottom: 10px;
-    }
-    
-    .text-box h3{
-        font-size: 18px;
-        font-weight: 500;
-        margin-bottom: 20px;
+    html{
+        font-size: 12px;
     }
 
     /* !!! */
