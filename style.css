@@ -71,7 +71,7 @@ nav li a:hover{
 }
 
 .tooltip {
-    
+    visibility: hidden;
     background-color: rgba(255, 255, 255, 0.5);
     color: #000000;
     text-align: center;
@@ -83,7 +83,7 @@ nav li a:hover{
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, visibility 0.3s;
     white-space: nowrap;
 }
 
